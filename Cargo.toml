@@ -1,12 +1,21 @@
 [workspace]
 resolver = "2"
-
-members = [
-  "days/day-*",
-]
+members = ["days/day-*"]
+default-members = ["days/day-*"]
 
 [workspace.dependencies]
-
-winnow = "0.6.20"
+winnow = "0.6"
+miette = { version = "7.2", features = ["fancy"] }
 thiserror = "2.0.3"
-miette = { version = "7.1.0", features = [ "fancy" ] }
+
+dhat = { version = "0.3.3"}
+divan = "0.1.14"
+flamegraph = "0.6.5"
+
+[profile.flamegraph]
+inherits = "release"
+debug = true
+
+[profile.dhat]
+inherits = "release"
+debug = true
