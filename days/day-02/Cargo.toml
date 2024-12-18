@@ -1,0 +1,21 @@
+[package]
+name = "day-02"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+miette.workspace = true
+thiserror.workspace = true
+winnow.workspace = true
+dhat = { workspace = true, optional = true }
+
+[dev-dependencies]
+divan.workspace = true
+flamegraph.workspace = true
+
+[[bench]]
+name = "benchmarks"
+harness = false
+
+[features]
+dhat-heap = ["dep:dhat"]
